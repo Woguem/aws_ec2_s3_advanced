@@ -13,10 +13,9 @@ REGION = os.getenv("AWS_DEFAULT_REGION", "us-east-1")  # Default region if not s
 ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
 SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")'''
 
-print(BUCKET_NAME) 
-print(REGION)
-print(ACCESS_KEY)
-print(SECRET_KEY)
+print(S3_BUCKET_NAME) 
+print(AWS_DEFAULT_REGION)
+
 
 def get_s3_client():
     """Create and return an S3 client using the loaded credentials."""
