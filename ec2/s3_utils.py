@@ -8,13 +8,12 @@ load_dotenv()
 #load_env_from_system()
 
 # Initialize constants
-'''BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
+BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
 REGION = os.getenv("AWS_DEFAULT_REGION", "us-east-1")  # Default region if not specified
 ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
-SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")'''
+SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 
-# print(os.environ.get(S3_BUCKET_NAME)) 
-print(os.environ.get("AWS_DEFAULT_REGION"))
+# print(os.environ.get("AWS_DEFAULT_REGION"))
 
 
 def get_s3_client():
