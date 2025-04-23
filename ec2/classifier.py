@@ -2,6 +2,7 @@ import numpy as np
 import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
+import xgboost 
 from sklearn.svm import SVC
 from sklearn.datasets import load_iris
 
@@ -24,6 +25,8 @@ def train_model(data_path, model_type="random_forest", save_path="iris_model.pkl
         model = SVC(probability=True)
     elif model_type == "knn":
         model = KNeighborsClassifier()
+    elif model_type == "xgboost":
+        model = xgboost.XGBClassifier() 
     else:
         raise ValueError("Unsupported model type")
 
