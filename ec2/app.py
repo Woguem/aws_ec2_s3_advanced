@@ -98,7 +98,7 @@ with st.expander("Admin: Upload & Retrain"):
 
     # Retrain model section
     st.subheader("Retrain Model")
-    model_options = ["random_forest", "svm", "knn", "xgboost"]
+    model_options = ["random_forest", "svm", "knn", "logreg"]
     selected_model = st.selectbox("Model type", model_options)
 
     if st.button("Retrain Model"):

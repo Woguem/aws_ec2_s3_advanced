@@ -74,7 +74,7 @@ def retrain(model_type: str = "random_forest"):
     global model
 
     # Validate model type
-    if model_type not in ["random_forest", "svm", "knn", "xgboost"]:
+    if model_type not in ["random_forest", "svm", "knn", "logreg"]:
         raise HTTPException(status_code=400, detail=f"Unsupported model type: {model_type}")
 
     try:
