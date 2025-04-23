@@ -81,8 +81,9 @@ async def upload_data(file: UploadFile = File(...)):
             shutil.copyfileobj(file.file, f)
 
         # Upload to S3
-        file_number = get_next_file_number()
-        file_name = f"iris_data_{file_number}.csv"
+        #file_number = get_next_file_number()
+        #file_name = f"iris_data_{file_number}.csv"
+        file_name = "iris_data.csv"
         success = upload_to_s3(file_location, file_name)
         if not success:
             raise HTTPException(status_code=500, detail="Failed to upload to S3")
