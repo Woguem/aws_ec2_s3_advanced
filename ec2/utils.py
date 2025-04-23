@@ -14,7 +14,4 @@ def load_env_from_system():
     except Exception as e:
         print(f"Failed to load environment variables: {e}")
         return
-# Add this to the beginning of s3_utils.py
-load_env_from_system()
-# Then load from .env as fallback
-load_dotenv()
+    

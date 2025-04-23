@@ -9,9 +9,9 @@ from typing import Optional
 from classifier import load_model, predict, train_model
 from s3_utils import download_from_s3, upload_to_s3
 
-counter_file = "compteur.txt"
+'''counter_file = "compteur.txt"
 
-'''def get_next_file_number():
+def get_next_file_number():
     if os.path.exists(counter_file):
         # Read last counter number
         with open(counter_file, "r") as f:
