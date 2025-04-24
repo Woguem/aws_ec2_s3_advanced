@@ -3,7 +3,7 @@ import boto3
 
 
 # Optional: define a specific profile if you don't use the "default" profile
-# os.environ["AWS_PROFILE"] = "yen"
+os.environ["AWS_PROFILE"] = "yen"
 
 BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
 
