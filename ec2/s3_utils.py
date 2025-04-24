@@ -1,7 +1,7 @@
 import os
 import boto3
 from dotenv import load_dotenv
-from utils import load_env_from_system
+#from utils import load_env_from_system
 
 # Load credentials from .env file
 load_dotenv()

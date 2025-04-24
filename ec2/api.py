@@ -7,7 +7,7 @@ from typing import Optional
 
 # Import our utility functions
 from classifier import load_model, predict, train_model
-from s3_utils import download_from_s3, upload_to_s3
+from s3_utils_aws import download_from_s3, upload_to_s3
 
 '''counter_file = "compteur.txt"
 
