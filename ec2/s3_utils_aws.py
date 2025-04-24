@@ -11,7 +11,7 @@ def get_s3_client():
     """Creates and returns an S3 client using AWS profile credentials."""
     return boto3.client("s3") # boto3 is automatically based on ~/.aws/credentials and config
 
-def upload_to_s3(file_path: str, s3_key: str, BUCKET_NAME: str):
+def upload_to_s3(file_path: str, s3_key: str):
     """Uploads a local file to the specified S3 bucket."""
     try:
         if not os.path.exists(file_path):
@@ -25,7 +25,7 @@ def upload_to_s3(file_path: str, s3_key: str, BUCKET_NAME: str):
         print(f"❌ Upload failed: {e}")
         return False
 
-def download_from_s3(s3_key: str, local_path: str, BUCKET_NAME: str):
+def download_from_s3(s3_key: str, local_path: str):
     """Downloads a file from the specified S3 bucket to a local path."""
     try:
         s3 = get_s3_client()
