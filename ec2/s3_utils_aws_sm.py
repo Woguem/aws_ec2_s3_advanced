@@ -5,7 +5,7 @@ import json
 
 def get_secret():
     """Retrieve secrets from AWS Secrets Manager."""
-    secret_name = "dev_api_secret"
+    secret_name = "secret_for_my_api"
     region_name = "eu-west-3"
 
     # Create a Secrets Manager client
