@@ -23,10 +23,10 @@ def get_secret():
 
 secrets = get_secret()
 
-AWS_ACCESS_KEY = secrets["AWS_ACCESS_KEY_ID"]
-AWS_SECRET_KEY = secrets["AWS_SECRET_ACCESS_KEY"]
-AWS_REGION = secrets["AWS_DEFAULT_REGION"]  
-BUCKET_NAME = secrets["S3_BUCKET_NAME"] 
+AWS_ACCESS_KEY = secrets["AWS_ACCESS_KEY_ID"].replace("\"", "")
+AWS_SECRET_KEY = secrets["AWS_SECRET_ACCESS_KEY"].replace("\"", "")
+AWS_REGION = secrets["AWS_DEFAULT_REGION"].replace("\"", "")  
+BUCKET_NAME = secrets["S3_BUCKET_NAME"].replace("\"", "") 
 
 
 def get_s3_client():
