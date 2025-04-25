@@ -1,11 +1,11 @@
 import os
 import boto3
-
+from utils import Utils
 
 # Optional: define a specific profile if you don't use the "default" profile
-os.environ["AWS_PROFILE"] = "yen"
+#os.environ["AWS_PROFILE"] = "yen"
 
-BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
+_, _, BUCKET_NAME, _ = Utils.load_credentials()
 
 def get_s3_client():
     """Creates and returns an S3 client using AWS profile credentials."""

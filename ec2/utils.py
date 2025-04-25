@@ -1,17 +1,14 @@
 import os
-import subprocess
-def load_env_from_system():
-    try:
-        # Read from /etc/environment
-        with open('/etc/environment', 'r') as f:
-            for line in f:
-                if '=' in line:
-                    key, value = line.strip().split('=', 1)
-                    # Strip quotes if present
-                    value = value.strip('\'"')
-                    os.environ[key] = value
-        return True
-    except Exception as e:
-        print(f"Failed to load environment variables: {e}")
-        return
-    
+class Utils:
+    def __init__(self):
+        # Initialize constants
+        self.BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
+        self.REGION = os.getenv("AWS_DEFAULT_REGION")  # Default region if not specified
+        self.ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
+        self.SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+    def load_credentials(self):
+        """Load AWS credentials from environment variables."""
+        if not all([self.ACCESS_KEY, self.SECRET_KEY, self.BUCKET_NAME, self.REGION]):
+            raise ValueError("Missing AWS credentials or bucket name. Check your .env file.")
+        return self.ACCESS_KEY, self.SECRET_KEY, self.BUCKET_NAME, self.REGION

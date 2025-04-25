@@ -1,17 +1,12 @@
 import os
 import boto3
 from dotenv import load_dotenv
+from utils import Utils
 #from utils import load_env_from_system
 
 # Load credentials from .env file
 load_dotenv()
-#load_env_from_system()
-
-# Initialize constants
-BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
-REGION = os.getenv("AWS_DEFAULT_REGION", "us-east-1")  # Default region if not specified
-ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
-SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+ACCESS_KEY,  SECRET_KEY, BUCKET_NAME, REGION = Utils.load_credentials()
 
 # print(os.environ.get("AWS_DEFAULT_REGION"))
 

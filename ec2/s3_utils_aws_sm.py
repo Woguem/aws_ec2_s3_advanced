@@ -23,6 +23,8 @@ def get_secret():
 
 secrets = get_secret()
 
+print(secrets)
+
 AWS_ACCESS_KEY = secrets["AWS_ACCESS_KEY_ID"].replace("\"", "")
 AWS_SECRET_KEY = secrets["AWS_SECRET_ACCESS_KEY"].replace("\"", "")
 AWS_REGION = secrets["AWS_DEFAULT_REGION"].replace("\"", "")  
