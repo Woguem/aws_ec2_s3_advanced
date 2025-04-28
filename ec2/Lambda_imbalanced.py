@@ -8,6 +8,8 @@ from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.over_sampling import RandomOverSampler
 import boto3
+from s3_utils_aws_sm import download_from_s3, upload_to_s3
+
 
 # Configuration
 API_ENDPOINT = os.environ.get('API_ENDPOINT', 'http://13.38.30.107:8000')
@@ -65,7 +67,7 @@ def lambda_handler(event, context):
             balanced_data = data
 
         # Upload the balanced data back to S3
-        s3_client.upload_file('/tmp/balanced_data.csv', bucket, 'balanced_data.csv')
+        upload_to_s3('/tmp/balanced_data.csv', 'balanced_data.csv')
         
         # Send the balanced data to the FastAPI service for retraining
         response = requests.post(f"{API_ENDPOINT}/retrain?model_type={MODEL_TYPE}")
