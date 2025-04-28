@@ -10,16 +10,16 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first to leverage Docker cache
-COPY ec2/requirements.txt .
+COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code
-COPY ec2/ .
+COPY . .
 
 # Copy the model file
-COPY ec2/iris_model.pkl .
+COPY iris_model.pkl .
 
 # Set environment variable
 
