@@ -43,8 +43,7 @@ def lambda_handler(event, context):
 
     try:
         # Download the file from S3
-        s3_client = boto3.client('s3')
-        s3_client.download_file(bucket, key, '/tmp/data.csv')
+        download_from_s3(key, '/tmp/data.csv')
         
         # Load csv file into a DataFrame
         data = pd.read_csv('/tmp/data.csv')
