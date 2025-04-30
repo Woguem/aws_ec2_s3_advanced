@@ -19,12 +19,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Copy the model file
-COPY iris_model.pkl .
+# COPY iris_model.pkl .
 
 # Set environment variable
 
 ENV PYTHONPATH=/app
-ENV AWS_DEFAULT_REGION=us-east-1
+ENV AWS_DEFAULT_REGION=eu-west-3
 
 # Expose ports for FastAPI and Streamlit
 EXPOSE 8000 8501
